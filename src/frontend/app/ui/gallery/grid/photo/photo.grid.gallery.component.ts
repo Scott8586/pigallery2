@@ -60,7 +60,7 @@ export class GalleryPhotoComponent implements IRenderable, OnInit, OnDestroy {
   }
 
   get Title(): string {
-    if ((Config.Client.Other.titleFirstNaming === true && this.gridMedia.media as PhotoDTO).metadata.title) {
+    if (Config.Client.Other.titleFirstNaming === true && (this.gridMedia.media as PhotoDTO).metadata.title) {
       if ((this.gridMedia.media as PhotoDTO).metadata.title.length > 20) {
         return (
           (this.gridMedia.media as PhotoDTO).metadata.title.substring(0, 17) +
@@ -70,7 +70,7 @@ export class GalleryPhotoComponent implements IRenderable, OnInit, OnDestroy {
       return (this.gridMedia.media as PhotoDTO).metadata.title;
     }
 
-    if ((Config.Client.Other.captionFirstNaming === true && this.gridMedia.media as PhotoDTO).metadata.caption) {
+    if (Config.Client.Other.captionFirstNaming === true && (this.gridMedia.media as PhotoDTO).metadata.caption) {
       if ((this.gridMedia.media as PhotoDTO).metadata.caption.length > 20) {
         return (
           (this.gridMedia.media as PhotoDTO).metadata.caption.substring(0, 17) +
